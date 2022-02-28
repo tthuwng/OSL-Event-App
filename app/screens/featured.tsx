@@ -15,13 +15,14 @@ import {
   View,
 } from 'react-native';
 import {
+  ScrollView,
   TouchableOpacity,
   TouchableWithoutFeedback,
 } from 'react-native-gesture-handler';
 import {StackScreenProps} from '@react-navigation/stack';
 import styled from 'styled-components/native';
 import {Icon} from '../components/icons';
-import {COLORS, dummyData, SIZES} from '../constants';
+import {COLORS, dummyData, SIZES, metrics} from '../constants';
 import {DataSnapshot, getStorageImgURL} from '../firebase';
 import Animated, {SlideInUp, FadeIn} from 'react-native-reanimated';
 import LinearGradient from 'react-native-linear-gradient';
@@ -163,112 +164,150 @@ const Featured = ({navigation}: IProps) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Header Section */}
-      {!isSearching && query === '' && (
-        <Animated.View entering={FadeIn.duration(500)}>
-          <SectionHeader>
-            <View>
-              {/* <Text color="white" opacity={0.5}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {/* Header Section */}
+        {!isSearching && query === '' && (
+          <Animated.View entering={FadeIn.duration(500)}>
+            <SectionHeader>
+              <View>
+                {/* <Text color="white" opacity={0.5}>
               DECEMBER 21 0:10PM
             </Text> */}
-              <Text fontSize={'3xl'} fontWeight={'bold'} color="white">
-                Explore events
-              </Text>
-            </View>
-            {/* <Avatar source={images.avatar} /> */}
-          </SectionHeader>
-        </Animated.View>
-      )}
-      {/* Search Section */}
-      <SectionSearch>
-        <SearchView>
-          {/* <Icon color="white" size={18} name="search" /> */}
-          <Input
-            clearButtonMode="while-editing"
-            value={query}
-            onChangeText={queryText => handleSearch(queryText)}
-            placeholder="Search"
-            placeholderTextColor={COLORS.gray1}
-            backgroundColor={COLORS.input}
-            color={COLORS.white}
-            width={!isSearching ? '100%' : '85%'}
-            variant="unstyled"
-            borderRadius="10"
-            py={4}
-            enablesReturnKeyAutomatically
-            // px={SIZES.padding}
-            fontSize="14"
-            onFocus={() => setIsSearching(true)}
-            onBlur={() => setIsSearching(false)}
-            returnKeyType="search"
-            borderWidth="0"
-            InputLeftElement={
-              <Icon ml={4} color="white" size={18} name="search" />
-            }
-          />
-          {isSearching && (
-            <TouchableOpacity
-              onPress={() => {
-                Keyboard.dismiss();
-                setIsSearching(false);
-                setQuery('');
-              }}>
-              <Text color="#fff">Cancel</Text>
-            </TouchableOpacity>
-          )}
-          {/* <Icon color="white" size={18} name="filter" /> */}
-        </SearchView>
-      </SectionSearch>
-
-      {query !== '' && (
-        <View>
-          <FlatList
-            data={searchData}
-            keyExtractor={item => item.id}
-            renderItem={({item}: {item: Event}) => (
-              <TouchableWithoutFeedback
+                <Text fontSize={'3xl'} fontWeight={'bold'} color="white">
+                  Explore events
+                </Text>
+              </View>
+              {/* <Avatar source={images.avatar} /> */}
+            </SectionHeader>
+          </Animated.View>
+        )}
+        {/* Search Section */}
+        <SectionSearch>
+          <SearchView>
+            {/* <Icon color="white" size={18} name="search" /> */}
+            <Input
+              clearButtonMode="while-editing"
+              value={query}
+              onChangeText={queryText => handleSearch(queryText)}
+              placeholder="Search"
+              placeholderTextColor={COLORS.gray1}
+              backgroundColor={COLORS.input}
+              color={COLORS.white}
+              width={!isSearching ? '100%' : '85%'}
+              variant="unstyled"
+              borderRadius="10"
+              py={4}
+              enablesReturnKeyAutomatically
+              // px={SIZES.padding}
+              fontSize="14"
+              onFocus={() => setIsSearching(true)}
+              onBlur={() => setIsSearching(false)}
+              returnKeyType="search"
+              borderWidth="0"
+              InputLeftElement={
+                <Icon ml={4} color="white" size={18} name="search" />
+              }
+            />
+            {isSearching && (
+              <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('EventDetail', {event: item});
                   Keyboard.dismiss();
                   setIsSearching(false);
                   setQuery('');
                 }}>
-                <View style={styles.listItem}>
-                  <FastImage
-                    source={{uri: item.image}}
-                    style={styles.coverImage}
-                  />
-                  <View style={styles.metaInfo}>
-                    <Text color="#ccc">{`${item.startDate} `}</Text>
-                    <Text style={styles.title}>{`${item.name}`}</Text>
-                    <Text color="#ccc">{`${item.location} `}</Text>
-                  </View>
-                </View>
-              </TouchableWithoutFeedback>
+                <Text color="#fff">Cancel</Text>
+              </TouchableOpacity>
             )}
-          />
-        </View>
-      )}
+            {/* <Icon color="white" size={18} name="filter" /> */}
+          </SearchView>
+        </SectionSearch>
 
-      {/* FEATURED */}
-      {!isSearching && query === '' && (
-        <Animated.View entering={FadeIn.duration(300)}>
-          <SectionTitle>
-            <Text color="white" fontSize={'md'} fontWeight={'bold'}>
-              FEATURED
-            </Text>
-          </SectionTitle>
+        {query !== '' && (
           <View>
             <FlatList
-              horizontal
-              contentContainerStyle={{}}
-              keyExtractor={item => 'event_' + item.id}
-              data={events}
-              showsHorizontalScrollIndicator={false}
-              renderItem={_renderItem}></FlatList>
+              scrollEnabled={false}
+              data={searchData}
+              keyExtractor={item => item.id}
+              renderItem={({item}: {item: Event}) => (
+                <TouchableWithoutFeedback
+                  onPress={() => {
+                    navigation.navigate('EventDetail', {event: item});
+                    Keyboard.dismiss();
+                    setIsSearching(false);
+                    setQuery('');
+                  }}>
+                  <View style={styles.listItem}>
+                    <FastImage
+                      source={{uri: item.image}}
+                      style={styles.coverImage}
+                    />
+                    <View style={styles.metaInfo}>
+                      <Text color="#ccc">{`${item.startDate} `}</Text>
+                      <Text style={styles.title}>{`${item.name}`}</Text>
+                      <Text color="#ccc">{`${item.location} `}</Text>
+                    </View>
+                  </View>
+                </TouchableWithoutFeedback>
+              )}
+            />
           </View>
-        </Animated.View>
-      )}
+        )}
+
+        {/* FEATURED */}
+        {!isSearching && query === '' && (
+          <Animated.View entering={FadeIn.duration(300)}>
+            <SectionTitle>
+              <Text color="white" fontSize={'md'} fontWeight={'bold'}>
+                FEATURED
+              </Text>
+            </SectionTitle>
+            <View>
+              <FlatList
+                horizontal
+                scrollEnabled={false}
+                contentContainerStyle={{}}
+                keyExtractor={item => 'event_' + item.id}
+                data={events}
+                showsHorizontalScrollIndicator={false}
+                renderItem={_renderItem}></FlatList>
+            </View>
+            <View
+              style={{
+                // flex: 1,
+                // width: '100%',
+                marginTop: metrics.extraLargeSize * 1.5,
+                marginBottom: metrics.extraLargeSize * 4,
+              }}>
+              <FlatList
+                scrollEnabled={false}
+                data={events}
+                keyExtractor={item => item.id}
+                renderItem={({item}: {item: Event}) => (
+                  <TouchableWithoutFeedback
+                    onPress={() => {
+                      navigation.navigate('EventDetail', {event: item});
+                      Keyboard.dismiss();
+                      setIsSearching(false);
+                      setQuery('');
+                    }}>
+                    <View style={styles.listItem}>
+                      <FastImage
+                        source={{uri: item.image}}
+                        style={styles.coverImage}
+                      />
+                      <View style={styles.metaInfo}>
+                        <Text color="#ccc">{`${item.startDate} `}</Text>
+                        <Text style={styles.title}>{`${item.name}`}</Text>
+                        <Text color="#ccc">{`${item.location} `}</Text>
+                      </View>
+                    </View>
+                  </TouchableWithoutFeedback>
+                )}
+              />
+            </View>
+          </Animated.View>
+        )}
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -311,6 +350,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.black,
+    width: '100%',
+    height: '100%',
   },
   metaInfo: {
     paddingLeft: 10,

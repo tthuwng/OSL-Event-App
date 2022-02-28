@@ -2,7 +2,7 @@
 /* eslint-disable react/self-closing-comp */
 
 import moment from 'moment';
-import {Text} from 'native-base';
+import {IconButton, Text} from 'native-base';
 import React, {useEffect, useState} from 'react';
 import {
   ActivityIndicator,
@@ -20,6 +20,7 @@ import {Icon} from '../components/icons';
 import {COLORS, dummyData, SIZES} from '../constants';
 import {Event} from './featured';
 import FastImage from 'react-native-fast-image';
+import Share from 'react-native-share';
 
 const EventDetail = ({navigation, route}) => {
   const [selectedEvent, setSelectedEvent] = useState<Event>();
@@ -28,6 +29,19 @@ const EventDetail = ({navigation, route}) => {
     let {event} = route.params;
     setSelectedEvent(event);
   }, [route.params]);
+
+  const onShare = async () => {
+    console.log('share');
+    try {
+      const result = await Share.open({
+        message:
+          'React Native | A framework for building native apps using React',
+      });
+      console.log(result.message);
+    } catch (error) {
+      alert(error.message);
+    }
+  };
 
   return selectedEvent ? (
     <View style={styles.container}>
@@ -83,7 +97,10 @@ const EventDetail = ({navigation, route}) => {
                       // tinyColor: COLORS.white,
                     }}></Icon>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity
+                  onPress={async () => {
+                    await onShare();
+                  }}>
                   <Icon
                     name="share"
                     size={18}
@@ -91,7 +108,8 @@ const EventDetail = ({navigation, route}) => {
                     style={{
                       marginRight: 16,
                       // tinyColor: COLORS.white,
-                    }}></Icon>
+                    }}
+                  />
                 </TouchableOpacity>
               </View>
             </SectionImageHeader>
