@@ -205,7 +205,6 @@ const Home = ({navigation}: IProps) => {
 const SectionSearch = styled.View`
   height: 50px;
   border-radius: 15px;
-  background-color: ${COLORS.white};
 `;
 
 export const SectionHeader = styled.View`
@@ -216,7 +215,6 @@ export const SectionHeader = styled.View`
 `;
 
 const SearchView = styled.View`
-  background-color: ${COLORS.white};
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
