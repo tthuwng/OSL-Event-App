@@ -1,15 +1,13 @@
 {
+  "setupFilesAfterEnv": ["./setup.ts"],
   "maxWorkers": 1,
+  "testEnvironment": "./environment",
   "testRunner": "jest-circus/runner",
   "testTimeout": 120000,
+  "testRegex": "\\.e2e\\.ts$",
   "transform": {
     "\\.tsx?$": "ts-jest"
   },
-  "testRegex": "\\.e2e\\.ts$",
   "reporters": ["detox/runners/jest/streamlineReporter"],
-  "verbose": true,
-  "preset": "ts-jest",
-  "testEnvironment": "node",
-  "setupTestFrameworkScriptFile": "./init.ts",
-  "setupFilesAfterEnv": ["./init.ts"]
+  "verbose": true
 }

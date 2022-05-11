@@ -17,7 +17,7 @@ import theme from './theme';
 
 GoogleSignin.configure({
   webClientId:
-    '559059413195-p4j61vpcbdgreua073t4st0vbb3vg343.apps.googleusercontent.com',
+    '559059413195-bm452n249mhutpo2ddtmf8ptjrubbqqq.apps.googleusercontent.com',
   hostedDomain: 'augustana.edu',
 });
 

@@ -30,6 +30,9 @@
 		B78974C9BB9B451384F3548D /* BeVietnamPro-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25D036507D4F4903948840E3 /* BeVietnamPro-Thin.ttf */; };
 		C89CD9B96F5A4A94A6F44908 /* BeVietnamPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B10B6858D3A34FEC87AA4863 /* BeVietnamPro-Light.ttf */; };
 		C932B21B276EB923007BE826 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C932B21A276EB923007BE826 /* GoogleService-Info.plist */; };
+		C95CF7C4281B6E630077C2C7 /* OSLEventAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95CF7C3281B6E630077C2C7 /* OSLEventAppUITests.swift */; };
+		C95CF7C6281B6E630077C2C7 /* OSLEventAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95CF7C5281B6E630077C2C7 /* OSLEventAppUITestsLaunchTests.swift */; };
+		C95CF7CF281B702B0077C2C7 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95CF7CE281B702B0077C2C7 /* SnapshotHelper.swift */; };
 		C9B4B2EA27D41ED900B078C4 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B4B2E927D41ED900B078C4 /* BootSplash.storyboard */; };
 		D751E3426A7E4491B479C997 /* BeVietnamPro-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C41F7558D3744455A091268F /* BeVietnamPro-ThinItalic.ttf */; };
 		DBADDE65EDE440EDB76D0D65 /* BeVietnamPro-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C27A71BF2054D419D73C376 /* BeVietnamPro-BoldItalic.ttf */; };
@@ -38,6 +41,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = OSLEventApp;
+		};
+		C95CF7C7281B6E630077C2C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
@@ -75,6 +85,10 @@
 		C0A881CF5CF3F2B244570E2A /* Pods-OSLEventApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSLEventApp.debug.xcconfig"; path = "Target Support Files/Pods-OSLEventApp/Pods-OSLEventApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C41F7558D3744455A091268F /* BeVietnamPro-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BeVietnamPro-ThinItalic.ttf"; path = "../assets/fonts/BeVietnamPro-ThinItalic.ttf"; sourceTree = "<group>"; };
 		C932B21A276EB923007BE826 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C95CF7C1281B6E630077C2C7 /* OSLEventAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OSLEventAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C95CF7C3281B6E630077C2C7 /* OSLEventAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLEventAppUITests.swift; sourceTree = "<group>"; };
+		C95CF7C5281B6E630077C2C7 /* OSLEventAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLEventAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C95CF7CE281B702B0077C2C7 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		C96B267E276EA7970003C3BE /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
 		C96B267F276EA7970003C3BE /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
 		C9B4B2E927D41ED900B078C4 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = OSLEventApp/BootSplash.storyboard; sourceTree = "<group>"; };
@@ -102,6 +116,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6172F2D35A4C3AA820D92908 /* libPods-OSLEventApp.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C95CF7BE281B6E630077C2C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +210,7 @@
 				13B07FAE1A68108700A75B9A /* OSLEventApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* OSLEventAppTests */,
+				C95CF7C2281B6E630077C2C7 /* OSLEventAppUITests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				E233CBF5F47BEE60B243DCF8 /* Pods */,
@@ -204,8 +226,19 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* OSLEventApp.app */,
 				00E356EE1AD99517003FC87E /* OSLEventAppTests.xctest */,
+				C95CF7C1281B6E630077C2C7 /* OSLEventAppUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C95CF7C2281B6E630077C2C7 /* OSLEventAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C95CF7CE281B702B0077C2C7 /* SnapshotHelper.swift */,
+				C95CF7C3281B6E630077C2C7 /* OSLEventAppUITests.swift */,
+				C95CF7C5281B6E630077C2C7 /* OSLEventAppUITestsLaunchTests.swift */,
+			);
+			path = OSLEventAppUITests;
 			sourceTree = "<group>";
 		};
 		C96B267D276EA7280003C3BE /* Fonts */ = {
@@ -275,12 +308,31 @@
 			productReference = 13B07F961A680F5B00A75B9A /* OSLEventApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C95CF7C0281B6E630077C2C7 /* OSLEventAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C95CF7C9281B6E630077C2C7 /* Build configuration list for PBXNativeTarget "OSLEventAppUITests" */;
+			buildPhases = (
+				C95CF7BD281B6E630077C2C7 /* Sources */,
+				C95CF7BE281B6E630077C2C7 /* Frameworks */,
+				C95CF7BF281B6E630077C2C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C95CF7C8281B6E630077C2C7 /* PBXTargetDependency */,
+			);
+			name = OSLEventAppUITests;
+			productName = OSLEventAppUITests;
+			productReference = C95CF7C1281B6E630077C2C7 /* OSLEventAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -289,6 +341,10 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1120;
+					};
+					C95CF7C0281B6E630077C2C7 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 				};
 			};
@@ -307,6 +363,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* OSLEventApp */,
 				00E356ED1AD99517003FC87E /* OSLEventAppTests */,
+				C95CF7C0281B6E630077C2C7 /* OSLEventAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -345,6 +402,13 @@
 				B78974C9BB9B451384F3548D /* BeVietnamPro-Thin.ttf in Resources */,
 				D751E3426A7E4491B479C997 /* BeVietnamPro-ThinItalic.ttf in Resources */,
 				C932B21B276EB923007BE826 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C95CF7BF281B6E630077C2C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +593,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C95CF7BD281B6E630077C2C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C95CF7C6281B6E630077C2C7 /* OSLEventAppUITestsLaunchTests.swift in Sources */,
+				C95CF7C4281B6E630077C2C7 /* OSLEventAppUITests.swift in Sources */,
+				C95CF7CF281B702B0077C2C7 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -536,6 +610,11 @@
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* OSLEventApp */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+		C95CF7C8281B6E630077C2C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* OSLEventApp */;
+			targetProxy = C95CF7C7281B6E630077C2C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -600,7 +679,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2U65PB4KJG;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = OSLEventApp/Info.plist;
@@ -619,6 +698,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -632,7 +712,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2U65PB4KJG;
 				INFOPLIST_FILE = OSLEventApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -649,6 +729,7 @@
 				PRODUCT_NAME = OSLEventApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -778,6 +859,66 @@
 			};
 			name = Release;
 		};
+		C95CF7CA281B6E630077C2C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 2U65PB4KJG;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.augustana.OSLEventAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OSLEventApp;
+			};
+			name = Debug;
+		};
+		C95CF7CB281B6E630077C2C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 3;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 2U65PB4KJG;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.augustana.OSLEventAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OSLEventApp;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -804,6 +945,15 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C95CF7C9281B6E630077C2C7 /* Build configuration list for PBXNativeTarget "OSLEventAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C95CF7CA281B6E630077C2C7 /* Debug */,
+				C95CF7CB281B6E630077C2C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

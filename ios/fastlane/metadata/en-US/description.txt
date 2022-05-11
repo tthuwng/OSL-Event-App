@@ -1,0 +1,13 @@
+Welcome to Vike Life! The one-stop app for all Augie events. Vike Life is designed to help students navigate their Viking experience. 
+
+Features include:
+
+-Weekly event updates
+
+-Like events you’re interested in and find them later
+
+-Search for events by their name, the location, and/or host
+
+-A new way to win raffle prizes and more!
+
+       Simply scan the QR code at any event and you are set!

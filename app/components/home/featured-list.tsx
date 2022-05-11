@@ -11,7 +11,7 @@ interface Iprops {
 }
 
 const FeaturedList = ({data}: Iprops) => {
-  const _renderItem = ({item}: any, index: number) => {
+  const _renderItem = ({item, index}: any) => {
     return <Card item={item} index={index} length={data?.length} />;
   };
   return (

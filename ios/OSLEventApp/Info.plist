@@ -31,12 +31,12 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.559059413195-p4j61vpcbdgreua073t4st0vbb3vg343</string>
+				<string>com.googleusercontent.apps.559059413195-bm452n249mhutpo2ddtmf8ptjrubbqqq</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>3</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>whatsapp</string>

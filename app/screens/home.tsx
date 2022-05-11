@@ -137,12 +137,16 @@ const Home = ({navigation}: IProps) => {
             />
             {isSearching && (
               <TouchableOpacity
+                accessible={false}
+                testID="button"
                 onPress={() => {
                   Keyboard.dismiss();
                   setIsSearching(false);
                   setQuery('');
                 }}>
-                <Text color={COLORS.text}>Cancel</Text>
+                <Text color={COLORS.text} testID="text">
+                  Cancel
+                </Text>
               </TouchableOpacity>
             )}
             {/* <Icon color={COLORS.text} size={18} name="filter" /> */}

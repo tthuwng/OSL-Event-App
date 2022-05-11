@@ -1,20 +1,11 @@
 import {useNavigation} from '@react-navigation/native';
 import moment from 'moment';
-import {
-  AspectRatio,
-  Box,
-  Center,
-  Stack,
-  Heading,
-  Text,
-  HStack,
-  View,
-} from 'native-base';
+import {AspectRatio, Box, Heading, Stack, Text, View} from 'native-base';
 import React from 'react';
 import FastImage from 'react-native-fast-image';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
-import {SIZES, COLORS} from '../constants';
+import {COLORS, SIZES} from '../constants';
 import {Event} from '../screens/home';
 
 interface Iprops {
@@ -25,8 +16,11 @@ interface Iprops {
 
 const Card = ({item, index, length}: Iprops) => {
   const navigation = useNavigation();
+  console.log('event_detail_' + index);
   return (
     <TouchableWithoutFeedback
+      testID={'event_detail_' + index}
+      accessibilityLabel={'event_detail_' + index}
       onPress={() => {
         navigation.navigate('EventDetail', {event: item});
       }}>

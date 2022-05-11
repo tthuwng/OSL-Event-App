@@ -5,7 +5,6 @@ import React from 'react';
 import {View} from 'react-native';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import Feather from 'react-native-vector-icons/Feather';
-import CameraScanner from '../components/camera-scanner';
 import {Icon as IconComponent} from '../components/icons';
 import {COLORS} from '../constants';
 import {Home, Profile} from '../screens';
@@ -85,6 +84,8 @@ const Tabs = () => {
         name="Home"
         component={Home}
         options={{
+          tabBarTestID: 'Home',
+          tabBarAccessibilityLabel: 'Home',
           tabBarIcon: ({focused}) => {
             return <TabIcon focused={focused} icon={'compass'} />;
           },
@@ -108,34 +109,13 @@ const Tabs = () => {
           ),
         }}
       />
-      {/* <Tab.Screen
-        name="Favorites"
-        component={Favorites}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <TabIcon focused={focused} icon={'heart'} />
-          ),
-          tabBarLabel: ({focused}) => (
-            <TabLabel focused={focused} text="Favorites" />
-          ),
-        }}
-      /> */}
-      {/* <Tab.Screen
-        name="Tickets"
-        component={Tickets}
-        options={{
-          tabBarIcon: ({focused}) => (
-            <TabIcon focused={focused} icon={'feather'} />
-          ),
-          tabBarLabel: ({focused}) => (
-            <TabLabel focused={focused} text="Tickets" />
-          ),
-        }}
-      /> */}
+
       <Tab.Screen
         name="Profile"
         component={Profile}
         options={{
+          tabBarTestID: 'Profile',
+          tabBarAccessibilityLabel: 'Profile',
           tabBarIcon: ({focused}) => (
             <TabIcon focused={focused} icon={'user'} />
           ),
@@ -157,6 +137,8 @@ const Root = ({navigation}: RootProps) => (
       },
       headerLeft: () => (
         <TouchableWithoutFeedback
+          testID="backButton"
+          accessibilityLabel="backButton"
           onPress={() => navigation.goBack()}
           style={{marginLeft: 10}}>
           <IconComponent
